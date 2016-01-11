@@ -1,0 +1,23 @@
+html
+  include ./head.jade
+  body
+    include ./new.jade
+    div(class="container")
+      h2 快递信息
+      table(class="table table-hover")
+        thead
+          tr
+            th name
+            th company
+            th tracking number
+            th status
+        tbody
+          each info in message.results
+            tr
+              td!=info.student_name
+              td!=info.service_provider
+              td!=info.tracking_number
+              td!=info.states[0].context
+              td
+                button
+                  a(href="/kuaidi/#{info._id}") edit

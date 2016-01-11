@@ -1,0 +1,22 @@
+div.container
+  h2 添加新快递
+  form(name="edit", action="", method="POST" class="form-horizontal" role="form")
+    div.form-group
+      label(for="name" class="col-sm-2") Student Name:
+      div.col-sm-6
+        input(type="text", name="name",id="name", class="form-control")
+    div.form-group
+      label(for="id" class="col-sm-2") Student ID:
+      div.col-sm-6
+        input(type="text", name="id",id="id", class="form-control")
+    div.form-group
+      label(for="provider" class="col-sm-2") Select Service Provider:
+      div.col-sm-6
+        select(class="form-control" id="provider" name="provider")
+          option(value="shunfeng") 顺丰快递
+          option(value="dhl") dhl
+    div.form-group
+      label(for="number" class="col-sm-2") Tracking Number:
+      div.col-sm-6
+        input(type="text", name="number",id="number", class="form-control")
+    input(type="submit", value="Add" class="btn btn-default")

@@ -1,0 +1,23 @@
+html
+  include ./head.jade
+  body
+    div(class="container")
+      h2 Package Detail
+      form(name="edit", action="?_method=PUT", method="POST" class="form-horizontal" role="form")
+        div.form-group
+          label(for="name" class="col-sm-2") Name:
+          div.col-sm-6
+            input(type="text", name="name",id="name", class="form-control" value=message.student_name disabled)
+        div.form-group
+          label(for="number" class="col-sm-2") Tracking Number:
+          div.col-sm-6
+            input(type="text", name="number",id="number", class="form-control" value=message.tracking_number)
+        input(type="submit", value="edit" class="btn btn-default")
+        a(href="/kuaidi" class="btn btn-default" role="button") Back
+
+    div.container
+      h4 Tracking information:
+      ul.list-group
+        div.col-sm-10
+          each state in message.states
+            li.list-group-item #{state.context}   #{state.ftime}
